@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness Program | CodSoft Internship</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-text typing-text">INITIALIZING SYSTEM...</div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="custom-cursor"></div>
+    <div class="cursor-follower" id="custom-cursor-follower"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-shield-halved"></i> Cyber<span class="primary-text">Aware</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about-phishing">What is Phishing?</a>
+                <a href="#how-it-works">How it Works</a>
+                <a href="#url-checker">URL Checker</a>
+                <a href="#quiz">Quiz</a>
+                <a href="#report">Report</a>
+            </div>
+            <div class="hamburger" id="hamburger-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="close-menu" id="close-menu"><i class="fa-solid fa-xmark"></i></div>
+        <a href="#about-phishing" class="mobile-link">What is Phishing?</a>
+        <a href="#how-it-works" class="mobile-link">How it Works</a>
+        <a href="#url-checker" class="mobile-link">URL Checker</a>
+        <a href="#quiz" class="mobile-link">Quiz</a>
+        <a href="#report" class="mobile-link">Report</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge fade-in">CodSoft Task 2</div>
+                <h1 class="hero-title slide-in-bottom">Protect Yourself From <br><span class="primary-text" id="typewriter"></span><span class="cursor-blink">|</span></h1>
+                <p class="hero-subtitle slide-in-bottom" style="transition-delay: 0.2s">Learn to identify, avoid, and report cyber threats. Don't let attackers steal your digital identity. Join the awareness program today.</p>
+                <div class="hero-buttons slide-in-bottom" style="transition-delay: 0.4s">
+                    <a href="#about-phishing" class="btn btn-primary glowing-btn">Start Learning <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#quiz" class="btn btn-outline">Take Quiz</a>
+                </div>
+            </div>
+            <div class="hero-image fade-in" style="transition-delay: 0.6s">
+                <div class="shield-animation">
+                    <i class="fa-solid fa-shield-virus shield-icon"></i>
+                    <div class="radar"></div>
+                    <div class="radar-scan"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Phishing -->
+    <section class="section" id="about-phishing">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>What is <span class="primary-text">Phishing?</span></h2>
+                <p>Phishing is a cyber attack that uses disguised email, websites, or messages to trick you into revealing sensitive information like passwords and credit card numbers.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card glass-card hover-glow reveal">
+                    <div class="card-icon"><i class="fa-solid fa-envelope-open-text warning-text"></i></div>
+                    <h3>Spear Phishing</h3>
+                    <p>Targeted attacks aimed at specific individuals or companies using gathered personal information to appear legitimate.</p>
+                </div>
+                <div class="card glass-card hover-glow reveal" style="transition-delay: 0.1s;">
+                    <div class="card-icon"><i class="fa-solid fa-fish primary-text"></i></div>
+                    <h3>Whaling</h3>
+                    <p>Highly targeted phishing attacks aimed at senior executives or high-profile targets with access to valuable assets.</p>
+                </div>
+                <div class="card glass-card hover-glow reveal" style="transition-delay: 0.2s;">
+                    <div class="card-icon"><i class="fa-solid fa-mobile-screen-button danger-text"></i></div>
+                    <h3>Smishing</h3>
+                    <p>Phishing attacks conducted via SMS or text messages, often containing malicious links disguised as alerts.</p>
+                </div>
+                <div class="card glass-card hover-glow reveal" style="transition-delay: 0.3s;">
+                    <div class="card-icon"><i class="fa-solid fa-phone-volume primary-text"></i></div>
+                    <h3>Vishing</h3>
+                    <p>Voice phishing where attackers call victims pretending to be from a trusted organization like a bank or tech support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Attackers Trick You -->
+    <section class="section alt-bg" id="how-it-works">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>How Attackers <span class="danger-text">Trick You</span></h2>
+                <p>Understanding the anatomy of a phishing attack is the first step to defending against it.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item reveal left">
+                    <div class="timeline-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="timeline-content glass-card hover-border">
+                        <h3>1. The Bait (Fake Message)</h3>
+                        <p>You receive an urgent email or SMS claiming your account is locked, or you've won a prize. It creates a false sense of urgency.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal right">
+                    <div class="timeline-icon"><i class="fa-solid fa-link"></i></div>
+                    <div class="timeline-content glass-card hover-border">
+                        <h3>2. The Hook (Malicious Link)</h3>
+                        <p>The message contains a link that looks legitimate but directs you to a fake website controlled by the attacker.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal left">
+                    <div class="timeline-icon"><i class="fa-solid fa-desktop"></i></div>
+                    <div class="timeline-content glass-card hover-border">
+                        <h3>3. The Trap (Fake Website)</h3>
+                        <p>The fake website mimics a real service (like a bank or social media) and asks you to log in or provide personal details.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal right">
+                    <div class="timeline-icon"><i class="fa-solid fa-user-secret"></i></div>
+                    <div class="timeline-content glass-card hover-border">
+                        <h3>4. The Catch (Data Stolen)</h3>
+                        <p>Once you enter your credentials, passwords, or OTPs, the attacker captures them to access your real accounts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fake vs Genuine Email -->
+    <section class="section" id="email-comparison">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Fake vs Genuine <span class="primary-text">Email</span></h2>
+                <p>Click on the warning signs in the fake email to learn how to spot red flags.</p>
+            </div>
+            
+            <div class="email-comparison-container reveal">
+                <div class="email-box fake-email glass-card">
+                    <div class="email-header">
+                        <div class="email-title-bar">
+                            <h4>Suspicious Email</h4>
+                        </div>
+                        <div class="sender-info">
+                            <div class="sender-avatar"><i class="fa-brands fa-paypal"></i></div>
+                            <div class="sender-details">
+                                <span class="sender-name">PayPal Security</span>
+                                <span class="sender-address tooltip-target" data-info="Check the domain! Attackers often use misspelled domains like 'paypal-security.com' instead of 'paypal.com'.">&lt;security@paypaI-support.com&gt;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        <p class="greeting tooltip-target" data-info="Generic greetings (Dear Customer) are common in phishing. Legitimate companies usually use your actual name.">Dear Customer,</p>
+                        <p>We detected unusual login activity on your account. Your account has been temporarily suspended for your protection.</p>
+                        <p class="urgency tooltip-target" data-info="Attackers create artificial urgency so you act quickly without thinking.">Please verify your identity within 24 hours to prevent permanent account deletion.</p>
+                        <div class="email-action">
+                            <button class="phishing-btn tooltip-target" data-info="Hover over links before clicking! This button likely leads to a malicious site.">Verify Account Now</button>
+                        </div>
+                        <p class="footer-text">Thank you,<br>Security Team</p>
+                    </div>
+                </div>
+                
+                <div class="interactive-info glass-card" id="email-info-box">
+                    <i class="fa-solid fa-hand-pointer primary-text info-icon"></i>
+                    <h3>Interactive Demo</h3>
+                    <p>Click on highlighted areas in the email to the left to see why they are suspicious.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- URL Checker Simulation -->
+    <section class="section alt-bg" id="url-checker">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Fake URL <span class="primary-text">Checker</span></h2>
+                <p>Test suspicious links before you click. Enter a URL below to scan it (Simulation).</p>
+            </div>
+            
+            <div class="checker-container glass-card reveal">
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-globe input-icon"></i>
+                        <input type="text" id="url-input" placeholder="e.g. facebook-login.xyz">
+                    </div>
+                    <button class="btn btn-primary glowing-btn" id="check-url-btn">Scan URL</button>
+                </div>
+                
+                <div class="checker-result" id="url-result">
+                    <!-- Results will be displayed here via JS -->
+                    <div class="result-placeholder">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <p>Enter a URL to see the analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phishing Quiz -->
+    <section class="section" id="quiz">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Test Your <span class="primary-text">Knowledge</span></h2>
+                <p>Take this 10-question quiz to see if you can outsmart the scammers.</p>
+            </div>
+            
+            <div class="quiz-container glass-card reveal">
+                <div id="quiz-start" class="quiz-screen active">
+                    <i class="fa-solid fa-clipboard-question quiz-icon"></i>
+                    <h3>Phishing Awareness Quiz</h3>
+                    <p>10 Questions to test your cybersecurity skills.</p>
+                    <button class="btn btn-primary glowing-btn" id="start-quiz-btn">Start Quiz</button>
+                </div>
+                
+                <div id="quiz-active" class="quiz-screen">
+                    <div class="quiz-header">
+                        <span class="question-tracker">Question <span id="current-q">1</span>/10</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="quiz-progress"></div>
+                        </div>
+                    </div>
+                    <div class="question-container">
+                        <h3 id="question-text">Question text goes here?</h3>
+                        <div class="options-container" id="options-container">
+                            <!-- Options generated via JS -->
+                        </div>
+                    </div>
+                    <div class="quiz-footer">
+                        <button class="btn btn-outline" id="next-q-btn" disabled>Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <div id="quiz-result" class="quiz-screen">
+                    <div class="score-circle">
+                        <svg viewBox="0 0 36 36" class="circular-chart primary">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" id="score-path" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage" id="score-percentage">0%</text>
+                        </svg>
+                    </div>
+                    <h3 id="score-message">Quiz Complete!</h3>
+                    <p>You scored <span id="final-score" class="primary-text">0</span> out of 10.</p>
+                    <div class="quiz-review" id="quiz-review">
+                        <!-- Review answers will be shown here -->
+                    </div>
+                    <button class="btn btn-primary glowing-btn" id="restart-quiz-btn"><i class="fa-solid fa-rotate-right"></i> Retake Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Tips -->
+    <section class="section alt-bg" id="tips">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Cyber Security <span class="primary-text">Tips</span></h2>
+                <p>10 golden rules to keep your digital identity safe from attackers.</p>
+            </div>
+            
+            <div class="tips-grid">
+                <!-- 10 Tips -->
+                <div class="tip-card glass-card hover-lift reveal">
+                    <div class="tip-number">01</div>
+                    <h4>Enable 2FA</h4>
+                    <p>Always use Two-Factor Authentication for an extra layer of security on all accounts.</p>
+                </div>
+                <div class="tip-card glass-card hover-lift reveal">
+                    <div class="tip-number">02</div>
+                    <h4>Check the URL</h4>
+                    <p>Always verify the domain name carefully before entering passwords. Look for typos.</p>
+                </div>
+                <div class="tip-card glass-card hover-lift reveal">
+                    <div class="tip-number">03</div>
+                    <h4>Don't Rush</h4>
+                    <p>Scammers create urgency. Take a breath and think before acting on "urgent" emails.</p>
+                </div>
+                <div class="tip-card glass-card hover-lift reveal">
+                    <div class="tip-number">04</div>
+                    <h4>Use Password Managers</h4>
+                    <p>They generate strong passwords and warn you if you're on a fake website.</p>
+                </div>
+                <div class="tip-card glass-card hover-lift reveal">
+                    <div class="tip-number">05</div>
+                    <h4>Verify Callers</h4>
+                    <p>If your "bank" calls asking for details, hang up and call their official number directly.</p>
+                </div>
+                <div class="tip-card glass-card hover-lift reveal">
+                    <div class="tip-number">06</div>
+                    <h4>Update Software</h4>
+                    <p>Keep your OS and browser updated to patch known security vulnerabilities.</p>
+                </div>
+                <div class="tip-card glass-card hover-lift reveal">
+                    <div class="tip-number">07</div>
+                    <h4>Hover over Links</h4>
+                    <p>Hover over hyperlinks to preview the actual destination URL before clicking.</p>
+                </div>
+                <div class="tip-card glass-card hover-lift reveal">
+                    <div class="tip-number">08</div>
+                    <h4>Never share OTPs</h4>
+                    <p>No legitimate organization will ever ask you to share your One-Time Password.</p>
+                </div>
+                <div class="tip-card glass-card hover-lift reveal">
+                    <div class="tip-number">09</div>
+                    <h4>Beware of Attachments</h4>
+                    <p>Never open unexpected email attachments, especially .exe, .zip, or macros in Office files.</p>
+                </div>
+                <div class="tip-card glass-card hover-lift reveal">
+                    <div class="tip-number">10</div>
+                    <h4>Educate Others</h4>
+                    <p>Share cybersecurity knowledge with friends and family to protect the community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="section" id="case-studies">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Real <span class="danger-text">Case Studies</span></h2>
+                <p>Learn from real-world scams that have tricked thousands of people.</p>
+            </div>
+            
+            <div class="cases-grid">
+                <div class="case-card glass-card reveal">
+                    <div class="case-img placeholder-img">
+                        <i class="fa-brands fa-google"></i>
+                        <span>Google Docs Scam</span>
+                    </div>
+                    <div class="case-content">
+                        <h3>The Google Docs Worm</h3>
+                        <p>An email claimed a contact shared a Google Doc. Clicking it asked for permissions to a fake app disguised as Google Docs.</p>
+                        <div class="lesson">
+                            <i class="fa-solid fa-lightbulb primary-text"></i>
+                            <strong>Lesson:</strong> Always verify app permissions before granting access to your account.
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card glass-card reveal" style="transition-delay: 0.1s;">
+                    <div class="case-img placeholder-img bank-bg">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Bank KYC Scam</span>
+                    </div>
+                    <div class="case-content">
+                        <h3>Fake Bank KYC Update</h3>
+                        <p>Victims received SMS claiming their bank account would be blocked unless they updated KYC via a provided malicious link.</p>
+                        <div class="lesson">
+                            <i class="fa-solid fa-lightbulb primary-text"></i>
+                            <strong>Lesson:</strong> Banks never ask for sensitive info via SMS links. Use the official app.
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card glass-card reveal" style="transition-delay: 0.2s;">
+                    <div class="case-img placeholder-img upi-bg">
+                        <i class="fa-solid fa-qrcode"></i>
+                        <span>UPI QR Scam</span>
+                    </div>
+                    <div class="case-content">
+                        <h3>OLX/UPI "Receive Money" Scam</h3>
+                        <p>Scammers pretended to buy items online and sent QR codes, claiming scanning them would deposit money. Instead, it deducted money.</p>
+                        <div class="lesson">
+                            <i class="fa-solid fa-lightbulb primary-text"></i>
+                            <strong>Lesson:</strong> You NEVER need to enter your UPI PIN to RECEIVE money.
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card glass-card reveal" style="transition-delay: 0.3s;">
+                    <div class="case-img placeholder-img whatsapp-bg">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>WhatsApp Scam</span>
+                    </div>
+                    <div class="case-content">
+                        <h3>The "Friend in Need" Hijack</h3>
+                        <p>Attackers hijack a WhatsApp account and message contacts urgently asking for money due to a medical emergency.</p>
+                        <div class="lesson">
+                            <i class="fa-solid fa-lightbulb primary-text"></i>
+                            <strong>Lesson:</strong> Always verify urgent money requests by calling the person directly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section alt-bg" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Frequently Asked <span class="primary-text">Questions</span></h2>
+                <p>Common questions about phishing and online security.</p>
+            </div>
+            
+            <div class="faq-container reveal">
+                <div class="accordion">
+                    <div class="accordion-item glass-card">
+                        <div class="accordion-header">
+                            <h4>What should I do if I clicked a phishing link?</h4>
+                            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+                        <div class="accordion-body">
+                            <p>Disconnect from the internet immediately. Run a full antivirus scan. If you entered passwords, change them immediately from a different device, and enable Two-Factor Authentication (2FA) on the affected account.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass-card">
+                        <div class="accordion-header">
+                            <h4>Can I get hacked just by opening an email?</h4>
+                            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+                        <div class="accordion-body">
+                            <p>Generally, no. Simply opening an email is usually safe in modern email clients. The danger lies in clicking links, downloading attachments, or replying with personal information. However, you should still disable automatic image loading to prevent tracking pixels.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass-card">
+                        <div class="accordion-header">
+                            <h4>Is a website safe if it has a padlock icon?</h4>
+                            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+                        <div class="accordion-body">
+                            <p>Not necessarily! The padlock (HTTPS) only means the connection between you and the website is encrypted. A scammer can easily get an SSL certificate for their fake website. You must always check the actual domain name.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass-card">
+                        <div class="accordion-header">
+                            <h4>How do scammers get my email address?</h4>
+                            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+                        <div class="accordion-body">
+                            <p>Emails are often harvested from data breaches, public social media profiles, buying lists on the dark web, or by guessing common email formats. You can use services like 'Have I Been Pwned' to check if your email was in a breach.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass-card">
+                        <div class="accordion-header">
+                            <h4>Why do phishing emails often have bad grammar?</h4>
+                            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+                        <div class="accordion-body">
+                            <p>While sometimes they originate from non-native speakers, it's often an intentional tactic. By using poor grammar, attackers filter out cautious people and ensure they only spend time targeting the most vulnerable or careless individuals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Phishing -->
+    <section class="section" id="report">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Report <span class="warning-text">Phishing</span></h2>
+                <p>Help make the internet safer by reporting suspicious websites and emails.</p>
+            </div>
+            
+            <div class="contact-container glass-card reveal">
+                <form id="report-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fake-url">Suspicious URL (Optional)</label>
+                        <input type="url" id="fake-url" placeholder="http://suspicious-site.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Incident Details</label>
+                        <textarea id="message" rows="4" required placeholder="Describe where you found this and why you think it's phishing..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary glowing-btn submit-btn">
+                        <span>Submit Report</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                    <div id="form-message" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Project -->
+    <section class="section alt-bg" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>About <span class="primary-text">Project</span></h2>
+            </div>
+            <div class="about-content glass-card reveal">
+                <div class="about-text">
+                    <h3>CodSoft Cyber Security Internship</h3>
+                    <p>This project is developed as part of the CodSoft Cyber Security Internship program. The objective is to design a modern educational web application that teaches users how phishing attacks work and how to protect themselves.</p>
+                    <p>It demonstrates frontend development skills combined with cybersecurity awareness, utilizing modern web design principles like glassmorphism, responsive layouts, and interactive JavaScript simulations.</p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+                        <span class="tech-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                        <span class="tech-tag"><i class="fa-brands fa-js"></i> Vanilla JS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-brand reveal">
+                    <h2><i class="fa-solid fa-shield-halved"></i> Cyber<span class="primary-text">Aware</span></h2>
+                    <p>Educating users to stay safe in the digital world. Think before you click.</p>
+                </div>
+                <div class="footer-links reveal" style="transition-delay: 0.1s;">
+                    <h3>Quick Links</h3>
+                    <a href="#home"><i class="fa-solid fa-angle-right"></i> Home</a>
+                    <a href="#about-phishing"><i class="fa-solid fa-angle-right"></i> What is Phishing?</a>
+                    <a href="#quiz"><i class="fa-solid fa-angle-right"></i> Take Quiz</a>
+                    <a href="#report"><i class="fa-solid fa-angle-right"></i> Report Attack</a>
+                </div>
+                <div class="footer-developer reveal" style="transition-delay: 0.2s;">
+                    <h3>Developer</h3>
+                    <div class="dev-info">
+                        <div class="dev-avatar">
+                            <i class="fa-solid fa-user-astronaut"></i>
+                        </div>
+                        <div>
+                            <p class="dev-name">Saurabh Prasad Gupta</p>
+                            <p class="dev-title">Cyber Security Intern</p>
+                            <p class="dev-company">CodSoft</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Saurabh Prasad Gupta. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <a href="#home" class="back-to-top" id="back-to-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/url_checker.js"></script>
+</body>
+</html>

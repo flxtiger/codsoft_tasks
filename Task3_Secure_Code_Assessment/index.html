@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureScan | Tactical Code Audit</title>
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+    <!-- CRT Overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Terminal Boot Loader -->
+    <div class="loader-wrapper">
+        <div class="loader-terminal">
+            <p>> Establishing secure connection...</p>
+            <p>> Bypassing firewalls... [OK]</p>
+            <p>> Initializing SecureScan Protocol... <span class="blink">_</span></p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i data-lucide="terminal"></i> SECURE_SCAN
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">[ HOME ]</a></li>
+                <li><a href="#about">[ ABOUT ]</a></li>
+                <li><a href="#scanner">[ SCANNER ]</a></li>
+                <li><a href="#checklist">[ CHECKLIST ]</a></li>
+                <li><a href="#quiz">[ QUIZ ]</a></li>
+                <li><a href="#owasp">[ OWASP ]</a></li>
+            </ul>
+            <div class="hamburger">
+                <i data-lucide="menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Home Section -->
+    <section id="home" class="hero container">
+        <div class="hero-content fade-in">
+            <h1 class="glitch" data-text="SYSTEM COMPROMISED?">SYSTEM <br><span style="color: #fff;">COMPROMISED?</span></h1>
+            <div class="typing-text">>_ </div>
+            <p class="mb-2 text-muted">Initialize vulnerability assessment protocols. Identify attack vectors. Secure the mainframe before deployment.</p>
+            <a href="#scanner" class="btn mt-2">[ EXECUTE SCANNER ]</a>
+        </div>
+        <div class="hero-image fade-in">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="dot" style="background:#ff5f56"></span>
+                    <span class="dot" style="background:#ffbd2e"></span>
+                    <span class="dot" style="background:#27c93f"></span>
+                    <span>root@securescan:~</span>
+                </div>
+                <div class="terminal-body">
+                    <p>> ./init_securescan.sh</p>
+                    <p>> loading signatures... <span class="text-muted">[OK]</span></p>
+                    <p>> bypassing local security... <span class="text-muted">[OK]</span></p>
+                    <p>> ready for payload injection.</p>
+                    <p class="blink">_</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section" style="background: rgba(0, 25, 0, 0.2); border-top: 1px dashed var(--primary); border-bottom: 1px dashed var(--primary);">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Secure Coding Matters</h2>
+            <div class="grid-3">
+                <div class="terminal-card fade-in text-center">
+                    <i data-lucide="lock" style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 15px;"></i>
+                    <h3>CIA Triad</h3>
+                    <p class="text-muted">Maintain Confidentiality, Integrity, and Availability of user data against modern cyber threats.</p>
+                </div>
+                <div class="terminal-card fade-in text-center">
+                    <i data-lucide="alert-triangle" style="width: 48px; height: 48px; color: var(--warning); margin-bottom: 15px;"></i>
+                    <h3>Risk Mitigation</h3>
+                    <p class="text-muted">Proactively identify and fix vulnerabilities before they reach production environments.</p>
+                </div>
+                <div class="terminal-card fade-in text-center">
+                    <i data-lucide="file-code" style="width: 48px; height: 48px; color: #3498db; margin-bottom: 15px;"></i>
+                    <h3>OWASP Standards</h3>
+                    <p class="text-muted">Adhere to industry standards by defending against the top 10 most critical web application security risks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scanner Section -->
+    <section id="scanner" class="section container">
+        <h2 class="section-title fade-in">Vulnerability Scanner</h2>
+        <p class="text-center text-muted fade-in mb-2">Inject your JavaScript payload below to scan for common security anti-patterns.</p>
+        
+        <div class="scanner-box fade-in">
+            <textarea id="code-input" class="code-input" placeholder="// Paste your JavaScript or Node.js code here...
+
+function login(username, password) {
+    // Example vulnerable code
+    var secretKey = 'super_secret_123';
+    var query = 'SELECT * FROM users WHERE username = ' + username;
+    eval(password);
+}"></textarea>
+            <div class="d-flex justify-between align-center">
+                <button id="scan-btn" class="btn btn-primary">[ INITIATE SCAN ]</button>
+                <button id="generate-report-btn" class="btn btn-outline" style="display: none;">
+                    <i data-lucide="download" style="width:16px; display:inline-block; vertical-align:middle;"></i> DUMP_REPORT.PDF
+                </button>
+            </div>
+        </div>
+
+        <div id="scan-results" class="results-container">
+            <div class="terminal-card mb-2">
+                <div class="d-flex justify-between align-center mb-2">
+                    <h3>SYSTEM INTEGRITY: <span id="risk-score">100</span>%</h3>
+                </div>
+                <div style="width: 100%; height: 10px; background: rgba(0,255,65,0.1); border: 1px solid var(--primary); overflow: hidden;">
+                    <div id="risk-progress-bar" style="height: 100%; width: 100%; background: var(--primary); transition: width 0.5s, background-color 0.5s;"></div>
+                </div>
+            </div>
+            <div id="results-list"></div>
+        </div>
+        
+        <div id="empty-state" class="text-center mt-2 fade-in">
+            <i data-lucide="terminal" style="width: 64px; height: 64px; color: var(--text-muted); opacity: 0.5;"></i>
+            <p class="text-muted mt-2">Awaiting payload injection...</p>
+        </div>
+    </section>
+
+    <!-- Secure vs Insecure -->
+    <section id="comparison" class="section" style="background: rgba(0, 25, 0, 0.2); border-top: 1px dashed var(--primary); border-bottom: 1px dashed var(--primary);">
+        <div class="container">
+            <h2 class="section-title fade-in">Secure vs Insecure Payload</h2>
+            <div class="grid-2">
+                <div class="terminal-card fade-in" style="border-color: var(--danger);">
+                    <h3 style="color: var(--danger);"><i data-lucide="x-circle" style="vertical-align:middle; width:24px;"></i> VULNERABLE</h3>
+                    <pre style="background:#000; padding:15px; border:1px solid var(--danger); margin: 15px 0; color: var(--danger); overflow-x: auto; font-family: 'Fira Code', monospace;">
+const query = "SELECT * FROM users \nWHERE id = " + userId;</pre>
+                    <p class="text-muted">String concatenation allows attackers to inject malicious SQL payloads (SQL Injection).</p>
+                </div>
+                <div class="terminal-card fade-in" style="border-color: var(--primary);">
+                    <h3 style="color: var(--primary);"><i data-lucide="check-circle" style="vertical-align:middle; width:24px;"></i> SECURE</h3>
+                    <pre style="background:#000; padding:15px; border:1px solid var(--primary); margin: 15px 0; color: var(--primary); overflow-x: auto; font-family: 'Fira Code', monospace;">
+const query = "SELECT * FROM users WHERE id = ?";
+db.execute(query, [userId]);</pre>
+                    <p class="text-muted">Parameterized queries (prepared statements) treat user input as data, not executable code.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Checklist -->
+    <section id="checklist" class="section container">
+        <h2 class="section-title fade-in">Hardening Protocol Checklist</h2>
+        <div class="terminal-card fade-in">
+            <div class="d-flex justify-between align-center mb-2">
+                <h3>Pre-Deployment Hardening</h3>
+                <span id="checklist-progress" style="color: var(--primary); font-weight: bold;">0% Complete</span>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox">
+                <span><strong>Input Validation:</strong> All user inputs are validated and sanitized on the server side.</span>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox">
+                <span><strong>Authentication:</strong> Strong password policies and multi-factor authentication are enforced.</span>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox">
+                <span><strong>Authorization:</strong> Principle of least privilege is applied to all roles and API endpoints.</span>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox">
+                <span><strong>Data Encryption:</strong> Sensitive data is encrypted at rest and in transit (HTTPS/TLS).</span>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox">
+                <span><strong>Session Management:</strong> Secure, HttpOnly cookies are used for session tokens.</span>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox">
+                <span><strong>Logging & Monitoring:</strong> Critical security events are logged without exposing sensitive data.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="section" style="background: rgba(0, 25, 0, 0.2); border-top: 1px dashed var(--primary); border-bottom: 1px dashed var(--primary);">
+        <div class="container quiz-container">
+            <h2 class="section-title fade-in">Threat Assessment Quiz</h2>
+            <p class="text-center text-muted fade-in mb-2">Test your knowledge of secure coding principles and the OWASP Top 10.</p>
+            
+            <div id="quiz-questions">
+                <!-- Quiz questions injected here -->
+            </div>
+            
+            <div class="text-center mt-2 fade-in">
+                <button id="submit-quiz-btn" class="btn btn-primary">[ SUBMIT ASSESSMENT ]</button>
+            </div>
+            
+            <div id="quiz-results" class="terminal-card mt-2 text-center fade-in" style="display: none; border-color: var(--primary);">
+                <h3>EVALUATION SCORE</h3>
+                <div id="quiz-score" style="font-size: 3rem; font-weight: bold; margin: 15px 0;">0%</div>
+                <button id="restart-quiz-btn" class="btn btn-outline mt-2">[ RESTART SIMULATION ]</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- OWASP Top 10 -->
+    <section id="owasp" class="section container">
+        <h2 class="section-title fade-in">OWASP Top 10 Signatures</h2>
+        <div class="grid-3">
+            <div class="terminal-card fade-in">
+                <h3 style="color: var(--danger);">A01: Broken Access Control</h3>
+                <p class="text-muted mt-2">Failures in enforcing policies so that users cannot act outside of their intended permissions.</p>
+            </div>
+            <div class="terminal-card fade-in">
+                <h3 style="color: var(--danger);">A02: Cryptographic Failures</h3>
+                <p class="text-muted mt-2">Failures related to cryptography leading to sensitive data exposure or system compromise.</p>
+            </div>
+            <div class="terminal-card fade-in">
+                <h3 style="color: var(--danger);">A03: Injection</h3>
+                <p class="text-muted mt-2">Flaws like SQL, NoSQL, and OS command injection occur when untrusted data is sent to an interpreter.</p>
+            </div>
+            <div class="terminal-card fade-in">
+                <h3 style="color: var(--warning);">A04: Insecure Design</h3>
+                <p class="text-muted mt-2">Missing or ineffective control design. It requires threat modeling and secure design patterns.</p>
+            </div>
+            <div class="terminal-card fade-in">
+                <h3 style="color: var(--warning);">A05: Security Misconfiguration</h3>
+                <p class="text-muted mt-2">Insecure default settings, incomplete configurations, or misconfigured HTTP headers.</p>
+            </div>
+            <div class="terminal-card fade-in">
+                <h3 style="color: var(--warning);">A06: Vulnerable Components</h3>
+                <p class="text-muted mt-2">Using outdated or unsupported software packages that have known vulnerabilities.</p>
+            </div>
+            <div class="terminal-card fade-in">
+                <h3 style="color: var(--warning);">A07: Identification & Auth Failures</h3>
+                <p class="text-muted mt-2">Confirmation of user identity, authentication, and session management is not implemented correctly.</p>
+            </div>
+            <div class="terminal-card fade-in">
+                <h3 style="color: var(--warning);">A08: Software & Data Integrity</h3>
+                <p class="text-muted mt-2">Code and infrastructure that does not protect against integrity violations (e.g., unsigned updates).</p>
+            </div>
+            <div class="terminal-card fade-in">
+                <h3 style="color: var(--warning);">A09: Logging & Monitoring Failures</h3>
+                <p class="text-muted mt-2">Without logging and monitoring, breaches cannot be detected, escalating the impact of an attack.</p>
+            </div>
+            <div class="terminal-card fade-in">
+                <h3 style="color: var(--warning);">A10: Server-Side Request Forgery</h3>
+                <p class="text-muted mt-2">Occurs when a web application is fetching a remote resource without validating the user-supplied URL.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ & Contact -->
+    <section id="faq" class="section" style="background: rgba(0, 25, 0, 0.2); border-top: 1px dashed var(--primary);">
+        <div class="container grid-2">
+            <!-- FAQ -->
+            <div class="fade-in">
+                <h2 style="color: var(--primary); margin-bottom: 30px;">INTEL / FAQ</h2>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <strong>What is Secure Coding?</strong>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-muted mt-2">Secure coding is the practice of developing software in a way that guards against accidental introduction of security vulnerabilities.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <strong>What is the OWASP Top 10?</strong>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-muted mt-2">A standard awareness document representing a broad consensus about the most critical security risks to web applications.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <strong>How does the scanner work?</strong>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-muted mt-2">It uses static analysis with rule-based regular expressions to identify common anti-patterns like eval() or dynamic SQL queries.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact -->
+            <div class="fade-in">
+                <div class="terminal-card">
+                    <h2 style="color: var(--primary); margin-bottom: 20px;">TRANSMIT_DATA</h2>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="AGENT_NAME" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="SECURE_COMM_CHANNEL (EMAIL)" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="4" placeholder="ENCRYPTED_PAYLOAD (FEEDBACK)" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">[ INITIATE TRANSFER ]</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i data-lucide="terminal"></i> SECURE_SCAN
+                </div>
+                <div>
+                    <p class="text-muted">CodSoft Cyber Security Internship - Task 3</p>
+                </div>
+                <div class="nav-links">
+                    <a href="https://github.com/Saurabh-Prasad-Gupta" target="_blank"><i data-lucide="github"></i></a>
+                    <a href="https://linkedin.com/in/Saurabh-Prasad-Gupta" target="_blank"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Developed by Saurabh Prasad Gupta. All systems nominal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div id="back-to-top">
+        <i data-lucide="chevron-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+    <script src="/js/script.js"></script>
+    <script src="/js/scanner.js"></script>
+    <script src="/js/quiz.js"></script>
+    <script src="/js/report.js"></script>
+</body>
+</html>
