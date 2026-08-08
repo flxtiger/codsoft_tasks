@@ -1,115 +1,189 @@
-# CodSoft Cyber Security Internship
+<div align="center">
 
-Welcome to my CodSoft Cyber Security Internship repository.
+# 🛡️ CodSoft Cyber Security Internship
 
-This repository contains the tasks completed as part of the CodSoft Cyber Security Internship Program. The projects focus on network security, phishing awareness, and secure coding practices.
+### 🚀 Cyber Security Projects Portfolio
 
----
-
-## 👨‍💻 Intern Details
-
-**Name:** Saurabh Prasad Gupta  
-**Domain:** Cyber Security  
-**Internship:** CodSoft Cyber Security Internship
+<img src="https://img.shields.io/badge/Domain-Cyber%20Security-blue?style=for-the-badge">
+<img src="https://img.shields.io/badge/Internship-CodSoft-success?style=for-the-badge">
+<img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge">
 
 ---
 
-## 📂 Tasks Completed
+### 👨‍💻 Saurabh Prasad Gupta
+### Computer Science & Engineering Student
 
-### 1️⃣ Network Packet Analyzer
+📚 Passionate about Cyber Security, Networking, Ethical Hacking & Secure Software Development
 
-A Python-based network packet analyzer used to capture and inspect network packets.
+</div>
 
-#### Features
-- Packet Capturing
-- Protocol Identification
-- Source and Destination Analysis
-- Network Traffic Monitoring
+---
 
-#### Tools Used
+# 📖 About This Repository
+
+This repository contains the projects completed during my **CodSoft Cyber Security Internship**.
+
+The objective of these projects is to gain practical exposure to:
+
+✔️ Network Security  
+✔️ Threat Detection  
+✔️ Phishing Awareness  
+✔️ Secure Coding Practices  
+✔️ Vulnerability Assessment  
+
+---
+
+# 🎯 Internship Tasks
+
+## 🔍 Task 1 — Network Packet Analyzer
+
+A powerful packet analysis tool designed to monitor and inspect network traffic.
+
+### ✨ Features
+
+- Capture network packets
+- Analyze packet headers
+- Monitor network traffic
+- Display source & destination information
+- Protocol identification
+
+### 🛠 Tools & Technologies
+
 - Python
 - Scapy
 - Wireshark
+- Networking Concepts
 
 ---
 
-### 2️⃣ Phishing Awareness Program
+## 🎣 Task 2 — Phishing Awareness Program
 
-A cybersecurity awareness project designed to educate users about phishing attacks and online safety.
+An awareness project focused on educating users about phishing attacks and online safety practices.
 
-#### Topics Covered
+### ✨ Topics Covered
+
 - Email Phishing
 - SMS Phishing (Smishing)
-- Social Engineering Attacks
-- Safe Browsing Practices
-- Prevention Techniques
+- Social Engineering
+- Fake Websites
+- Online Safety Best Practices
+
+### 🎯 Objective
+
+Help users identify phishing attempts and stay safe online.
 
 ---
 
-### 3️⃣ Secure Code Assessment
+## 🔐 Task 3 — Secure Code Assessment
 
-A security review project focused on identifying vulnerabilities in source code and recommending secure coding practices.
+A security assessment project aimed at identifying vulnerabilities in source code and promoting secure coding standards.
 
-#### Security Checks
+### ✨ Security Checks
+
 - Input Validation
-- Authentication & Authorization Issues
-- Hardcoded Credentials Detection
 - SQL Injection Risks
-- Code Quality Assessment
+- Hardcoded Credentials
+- Authentication Issues
+- Authorization Weaknesses
+- Security Misconfigurations
 
-#### Objectives
-- Identify Security Vulnerabilities
-- Recommend Security Improvements
-- Promote Secure Coding Standards
+### 🎯 Objective
 
----
-
-## 🛠️ Technologies & Tools
-
-- Python
-- Wireshark
-- Scapy
-- Cyber Security Concepts
-- Network Analysis Tools
+Improve software security through vulnerability identification and remediation.
 
 ---
 
-## 📸 Project Screenshots
+# 🧰 Technologies Used
 
-Screenshots and project outputs are available inside each task folder.
+| Category | Tools |
+|-----------|---------|
+| Programming | Python |
+| Network Analysis | Wireshark |
+| Packet Inspection | Scapy |
+| Security Analysis | Manual Review |
+| Documentation | Markdown |
 
 ---
 
-## 📌 Repository Structure
+# 📂 Repository Structure
 
-```text
+```bash
 codsoft_tasks
 │
 ├── Task1_Network_Packet_Analyzer
+│   ├── source_code
+│   ├── screenshots
+│   ├── report.pdf
+│   └── README.md
 │
 ├── Task2_Phishing_Awareness_Program
+│   ├── source_code
+│   ├── screenshots
+│   ├── report.pdf
+│   └── README.md
 │
 ├── Task3_Secure_Code_Assessment
+│   ├── source_code
+│   ├── screenshots
+│   ├── report.pdf
+│   └── README.md
 │
 └── README.md
 ```
 
 ---
 
-## 🎯 Learning Outcomes
+# 📸 Project Demonstration
 
-- Understanding Network Traffic Analysis
-- Identifying Phishing Attacks
-- Secure Coding Best Practices
-- Vulnerability Assessment Fundamentals
-- Cyber Security Awareness
+### Network Packet Analyzer
+📷 Screenshots available inside the project folder.
 
----
+### Phishing Awareness Program
+📷 Awareness materials and screenshots included.
 
-## 🙏 Acknowledgement
-
-I would like to thank CodSoft for providing this internship opportunity and helping me enhance my Cyber Security knowledge through practical projects.
+### Secure Code Assessment
+📷 Security assessment reports and outputs included.
 
 ---
 
-### ⭐ If you find this repository useful, feel free to star it.
+# 🌟 Skills Gained
+
+✅ Network Traffic Analysis
+
+✅ Cyber Security Fundamentals
+
+✅ Secure Coding Practices
+
+✅ Threat Awareness
+
+✅ Vulnerability Assessment
+
+✅ Security Documentation
+
+---
+
+# 🎓 Internship Outcome
+
+Through this internship, I strengthened my understanding of:
+
+- Cyber Security Concepts
+- Network Monitoring
+- Threat Detection
+- Security Awareness
+- Secure Software Development
+
+---
+
+# 🤝 Acknowledgement
+
+Special thanks to **CodSoft** for providing this internship opportunity and helping me gain hands-on experience in Cyber Security through practical projects.
+
+---
+
+<div align="center">
+
+## ⭐ Thank You For Visiting My Repository ⭐
+
+### If you found this repository useful, consider giving it a star!
+
+</div>
