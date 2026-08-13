@@ -123,7 +123,6 @@ CODSOFT_TASK1/
 ├── main.py
 ├── README.md
 ├── requirements.txt
-├── .gitignore
 │
 ├── output/
 │   ├── packets.txt
@@ -133,8 +132,6 @@ CODSOFT_TASK1/
 │   ├── main_menu.png
 │   ├── packet_capture.png
 │   └── packet_summary.png
-│
-└── venv/
 ```
 
 ---
