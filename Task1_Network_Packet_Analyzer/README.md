@@ -150,7 +150,7 @@ git clone https://github.com/flxtiger/CODSOFT_TASK1.git
 ## 2️⃣ Move to Project Directory
 
 ```bash
-cd CODSOFT_TASK1
+cd Task1_Network_Packet_Analyzer
 ```
 
 ## 3️⃣ Install Required Packages
