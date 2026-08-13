@@ -1,34 +1,117 @@
 # 🛡️ Network Packet Analyzer
 
-A Python-based **Network Packet Analyzer** developed as part of the **CodSoft Cyber Security Internship**. This project captures live network packets, extracts important information such as Source IP, Destination IP, Protocol, Packet Length, and displays them in a well-formatted console. It also stores the captured packet details in TXT and CSV files for future analysis.
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge\&logo=python)
+![Scapy](https://img.shields.io/badge/Scapy-Network%20Analysis-green?style=for-the-badge)
+![CyberSecurity](https://img.shields.io/badge/Cyber%20Security-CodSoft-red?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+
+### 📡 Real-Time Network Traffic Monitoring & Analysis
+
+**CodSoft Cyber Security Internship – Task 1**
+
+Capture • Analyze • Monitor • Learn
+
+</div>
 
 ---
 
-## 🚀 Features
+## 📖 About The Project
 
-- 📡 Capture live network packets
-- 🌐 Display Source IP Address
-- 🌐 Display Destination IP Address
-- 📦 Detect Protocol (TCP / UDP / ICMP)
-- 📏 Display Packet Length
-- ⏰ Show Packet Capture Time
-- 🎨 Colored Console Output
-- 📊 Live Packet Statistics
-- 📝 Save logs in `packets.txt`
-- 📄 Export packet details to `packets.csv`
-- 📋 Menu-based packet capture
-- 🛑 Graceful exit with packet summary
+The **Network Packet Analyzer** is a Python-based cyber security project designed to monitor and analyze network traffic in real time.
+
+It captures live packets flowing through the network and extracts valuable information such as:
+
+* Source IP Address
+* Destination IP Address
+* Protocol Type
+* Packet Length
+* Capture Timestamp
+
+The project helps beginners understand how network communication works and how cyber security professionals inspect network traffic for monitoring, troubleshooting, and security analysis.
 
 ---
 
-## 🛠️ Technologies Used
+## ✨ Key Features
 
-- Python 3
-- Scapy
-- Colorama
-- CSV Module
-- OS Module
-- Datetime Module
+### 📡 Live Packet Sniffing
+
+Capture network packets directly from the active network interface.
+
+### 🌐 IP Address Analysis
+
+Displays both Source and Destination IP addresses.
+
+### 📦 Protocol Detection
+
+Automatically identifies:
+
+* TCP
+* UDP
+* ICMP
+* Other IP-based protocols
+
+### 📏 Packet Information
+
+Shows detailed packet length and metadata.
+
+### ⏰ Real-Time Timestamping
+
+Records the exact capture time of every packet.
+
+### 🎨 Colored Console Interface
+
+Easy-to-read output using Colorama.
+
+### 📊 Live Packet Statistics
+
+Tracks packet counts while capturing.
+
+### 📝 TXT Log Generation
+
+Stores captured packets in a readable text format.
+
+### 📄 CSV Export
+
+Exports packet data for future analysis in Excel or other tools.
+
+### 🛑 Safe Exit & Summary
+
+Displays capture statistics before program termination.
+
+---
+
+# 🎯 Why This Project?
+
+Network packet analysis is one of the most important skills in Cyber Security.
+
+This project demonstrates:
+
+✅ Network Monitoring
+
+✅ Packet Inspection
+
+✅ Traffic Analysis
+
+✅ Logging & Reporting
+
+✅ Python Automation
+
+✅ Cyber Security Fundamentals
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose                   |
+| ---------- | ------------------------- |
+| Python 3   | Core Programming          |
+| Scapy      | Packet Capture & Analysis |
+| Colorama   | Colored Terminal Output   |
+| CSV Module | Data Export               |
+| Datetime   | Timestamp Generation      |
+| OS Module  | File Management           |
 
 ---
 
@@ -41,59 +124,72 @@ CODSOFT_TASK1/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
+│
 ├── output/
 │   ├── packets.txt
 │   └── packets.csv
+│
 ├── screenshots/
+│   ├── main_menu.png
+│   ├── packet_capture.png
+│   └── packet_summary.png
+│
 └── venv/
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation & Setup
 
-### 1. Clone the repository
-
-```bash
-git clone <repository-link>
-```
-
-### 2. Open the project folder
+## 1️⃣ Clone Repository
 
 ```bash
-cd CODSOFT_TASK1\
+git clone https://github.com/flxtiger/CODSOFT_TASK1.git
 ```
 
-### 3. Install dependencies
+## 2️⃣ Move to Project Directory
+
+```bash
+cd CODSOFT_TASK1
+```
+
+## 3️⃣ Install Required Packages
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the project
+## 4️⃣ Run The Program
 
 ```bash
 python main.py
 ```
 
-## 📸 Screenshots
+---
 
-### Main Menu
+# 📸 Project Screenshots
+
+## 🏠 Main Menu
 
 ![Main Menu](screenshots/main%20menu.png)
 
-### Packet Capture
+---
+
+## 📡 Live Packet Capture
 
 ![Packet Capture](screenshots/packet%20capture.png)
 
-### Packet Summary
+---
+
+## 📊 Packet Summary
 
 ![Packet Summary](screenshots/packet%20summar.png)
 
+---
 
-## 📄 Output Files
+# 📄 Generated Output
 
-After running the program, the following files will be created automatically:
+After execution, packet details are automatically stored inside:
 
 ```text
 output/
@@ -101,32 +197,113 @@ output/
 └── packets.csv
 ```
 
----
+### Example TXT Output
 
-## 🔮 Future Improvements
+```text
+Time: 14:35:20
+Source IP: 192.168.1.5
+Destination IP: 8.8.8.8
+Protocol: TCP
+Length: 74 Bytes
+```
 
-- GUI Version using Tkinter
-- Live Dashboard
-- Graphical Statistics
-- JSON Export
-- HTML Report
-- Packet Search
-- Network Traffic Graphs
+### Example CSV Output
 
----
-
-## 👨‍💻 Author
-
-**Saurabh Prasad Gupta**
-
-Computer Science & Engineering Student
-
-CodSoft Cyber Security Internship
+```csv
+Timestamp,Source IP,Destination IP,Protocol,Length
+14:35:20,192.168.1.5,8.8.8.8,TCP,74
+```
 
 ---
 
-## 📜 License
+# 📊 Sample Console Output
 
-This project is created for educational and internship purposes.  
+```text
+==================================================
+        NETWORK PACKET ANALYZER
+==================================================
 
+Packet #1
+Source      : 192.168.1.5
+Destination : 8.8.8.8
+Protocol    : TCP
+Length      : 74 Bytes
+Time        : 14:35:20
 
+--------------------------------------------------
+```
+
+---
+
+# 🔮 Future Enhancements
+
+* 🖥️ Graphical User Interface (Tkinter)
+* 📈 Live Network Dashboard
+* 📊 Real-Time Traffic Charts
+* 🌍 IP Geolocation Tracking
+* 📄 PDF Report Generation
+* 🔍 Packet Search & Filtering
+* 📂 JSON Export Support
+* 📉 Network Traffic Visualization
+* ⚠️ Suspicious Activity Detection
+* 🤖 AI-Based Traffic Analysis
+
+---
+
+# 🎓 Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+* Network Packet Inspection
+* Packet Sniffing Techniques
+* Cyber Security Fundamentals
+* Python-Based Security Tools
+* Data Logging & Reporting
+* Network Protocol Analysis
+* Real-Time Traffic Monitoring
+
+---
+
+# 👨‍💻 Developer
+
+## Saurabh Prasad Gupta
+
+**Computer Science & Engineering Student**
+
+Passionate about:
+
+* Cyber Security
+* Network Analysis
+* Python Development
+* Ethical Hacking
+* Software Development
+
+---
+
+# 📜 Internship Details
+
+This project was developed as part of the **CodSoft Cyber Security Internship Program** to enhance practical skills in network monitoring and cyber security concepts.
+
+---
+
+# ⭐ Support
+
+If you found this project useful:
+
+🌟 Star the Repository
+
+🍴 Fork the Project
+
+📢 Share with Others
+
+💻 Keep Learning Cyber Security
+
+---
+
+<div align="center">
+
+## 🚀 "Understanding Network Traffic is the First Step Towards Cyber Security."
+
+### Made with ❤️ by Saurabh Prasad Gupta
+
+</div>
