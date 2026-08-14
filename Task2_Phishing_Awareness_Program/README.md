@@ -107,22 +107,8 @@ Task2_Phishing_Awareness/
 ```
 
 ---
-
-# 🚀 How to Run
-
-1. Download or Clone this repository.
-
-```
-git clone <repository-link>
-```
-
-2. Open the project folder.
-
-3. Double-click **index.html**
-
-OR
-
-Run using **VS Code Live Server**.
+## Live Demo
+Website Link: https://phishing-awarness-s.netlify.app/
 
 ---
 # 📸 Screenshots
