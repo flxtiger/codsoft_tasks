@@ -96,22 +96,8 @@ CODSOFT_TASK3/
 ```
 
 ---
-
-# 🚀 How to Run
-
-1. Clone the repository
-
-```
-git clone <repository-link>
-```
-
-2. Open the project folder
-
-3. Launch **index.html**
-
-OR
-
-Run using **VS Code Live Server**
+## Live Demo
+Website Link: https://secure-code-review.netlify.app/
 
 ---
 
